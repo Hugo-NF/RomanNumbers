@@ -1,0 +1,151 @@
+        -:    0:Source:module.c
+        -:    0:Graph:module.gcno
+        -:    0:Data:module.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    0:Source is newer than graph
+        -:    1:#include "module.h"
+        -:    2:
+       14:    3:void lowercase (char *romans){
+        -:    4:    int i;
+       92:    5:    for(i=0; i<strlen(romans); i++){
+       78:    6:        romans[i] = tolower(romans[i]);
+        -:    7:    }
+       14:    8:}
+        -:    9:
+       10:   10:void uppercase (char *romans){
+        -:   11:    int i;
+       72:   12:    for(i=0; i<strlen(romans); i++){
+       62:   13:        romans[i] = toupper(romans[i]);
+        -:   14:    }
+       10:   15:}
+        -:   16:
+       22:   17:int* convert_arabic (char *roman){
+        -:   18:    int i;
+        -:   19:    int *numbers;
+        -:   20:
+       22:   21:    numbers = (int *) malloc((strlen(roman)+1)*sizeof(int));
+       22:   22:    numbers[0] = strlen(roman);
+        -:   23:
+      119:   24:    for(i=1; i<=strlen(roman); i++){
+       99:   25:        switch(roman[i-1]){
+        -:   26:            case 'i':
+       25:   27:                numbers[i] = 1;
+       25:   28:                break;
+        -:   29:            case 'v':
+        6:   30:                numbers[i] = 5;
+        6:   31:                break;
+        -:   32:            case 'x':
+       33:   33:                numbers[i] = 10;
+       33:   34:                break;
+        -:   35:            case 'l':
+        7:   36:                numbers[i] = 50;
+        7:   37:                break;
+        -:   38:            case 'c':
+       12:   39:                numbers[i] = 100;
+       12:   40:                break;
+        -:   41:            case 'd':
+        5:   42:                numbers[i] = 500;
+        5:   43:                break;
+        -:   44:            case 'm':
+        9:   45:                numbers[i] = 1000;
+        9:   46:                break;
+        -:   47:            default:
+        2:   48:                free(numbers);
+        2:   49:                return ptr_error;
+        -:   50:        }
+        -:   51:    }
+        -:   52:
+       20:   53:    return numbers;
+        -:   54:}
+        -:   55:
+       21:   56:int compute_arabic (int *conversion){
+       21:   57:    int number = 0;
+        -:   58:    int i;
+        -:   59:
+      111:   60:    for(i=conversion[0]; i>0; i--){
+       90:   61:        if(i==1 || conversion[i] <= conversion[i-1]){
+       81:   62:            number +=conversion[i];
+        -:   63:        }
+        9:   64:        else if(conversion[i]>conversion[i-1]){
+        9:   65:            number +=(conversion[i] - conversion[i-1]);
+        9:   66:            i--;
+        -:   67:        }
+        -:   68:    }
+       21:   69:    return number;
+        -:   70:}
+        -:   71:
+       21:   72:void convert_roman(int arabic, char *result_roman){
+       21:   73:    char *hundreds[] = {"", "c", "cc", "ccc", "cd", "d", "dc", "dcc", "dccc", "cm"};
+       21:   74:    char *dozens[]  = {"", "x", "xx", "xxx", "xl", "l", "lx", "lxx", "lxxx", "xc"};
+       21:   75:    char *units[] = {"", "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"};
+       21:   76:    int   size[] = { 0, 1, 2, 3, 2, 1, 2, 3, 4, 2};
+        -:   77:
+       41:   78:    while (arabic >= 1000){
+       10:   79:        *result_roman++ = 'm';
+       10:   80:         arabic -= 1000;
+        -:   81:    }
+        -:   82:
+       21:   83:    strcpy (result_roman, hundreds[arabic / 100]);
+       21:   84:    result_roman += size[arabic / 100];
+       21:   85:    arabic = arabic % 100;
+       21:   86:    strcpy (result_roman, dozens[arabic / 10]);
+       21:   87:    result_roman += size[arabic / 10];
+       21:   88:    arabic = arabic % 10;
+       21:   89:    strcpy (result_roman, units[arabic]);
+       21:   90:    result_roman += size[arabic];
+       21:   91:}
+        -:   92:
+       12:   93:int roman_to_arabic(char *romans){
+        -:   94:    int *conversion;
+        -:   95:    int result;
+        -:   96:    char validation[20];
+        -:   97:
+       12:   98:    if (romans == NULL)
+        1:   99:        return input_error;
+        -:  100:
+       11:  101:    lowercase(romans);
+        -:  102:
+       11:  103:    conversion = convert_arabic(romans);
+        -:  104:
+       11:  105:    if (conversion == NULL)
+        1:  106:        return input_error;
+        -:  107:
+       10:  108:    result = compute_arabic(conversion);
+        -:  109:
+       10:  110:    free(conversion);
+        -:  111:
+       10:  112:    convert_roman(result, validation);
+        -:  113:
+       10:  114:    if(strcmp(validation, romans)==0)
+        5:  115:        return result;
+        -:  116:    else
+        5:  117:        return input_error;
+        -:  118:}
+        -:  119:
+        8:  120:char* arabic_to_roman(int arabic){
+        8:  121:    char *result = (char *) malloc(20*sizeof(char));
+        -:  122:    int validation;
+        -:  123:    int *validation_array;
+        -:  124:
+        8:  125:    if(arabic < 1){
+        1:  126:        free(result);
+        1:  127:        return ptr_error;
+        -:  128:    }
+        7:  129:    convert_roman(arabic, result);
+        -:  130:
+        7:  131:    validation_array = convert_arabic(result);
+        -:  132:
+        7:  133:    validation = compute_arabic(validation_array);
+        -:  134:
+        7:  135:    free(validation_array);
+        -:  136:
+        7:  137:    if(validation == arabic){
+        7:  138:        uppercase(result);
+        7:  139:        return result;
+        -:  140:    }
+        -:  141:    else {
+    #####:  142:        free(result);
+    #####:  143:        return ptr_error;
+        -:  144:    }
+        -:  145:}
