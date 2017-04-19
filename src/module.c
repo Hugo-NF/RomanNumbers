@@ -89,3 +89,57 @@ void convert_roman(int arabic, char *result_roman){
     strcpy (result_roman, units[arabic]);
     result_roman += size[arabic];
 }
+
+int roman_to_arabic(char *romans){
+    int *conversion;
+    int result;
+    char validation[20];
+
+    if (romans == NULL)
+        return input_error;
+
+    lowercase(romans);
+
+    conversion = convert_arabic(romans);
+
+    if (conversion == NULL)
+        return input_error;
+
+    result = compute_arabic(conversion);
+
+    free(conversion);
+
+    convert_roman(result, validation);
+
+    if(strcmp(validation, romans)==0)
+        return result;
+    else
+        return input_error;
+}
+
+char* arabic_to_roman(int arabic){
+    char *result = (char *) malloc(20*sizeof(char));
+    int validation;
+    int *validation_array;
+
+    if(arabic < 1 || arabic > max_number){
+        free(result);
+        return ptr_error;
+    }
+    convert_roman(arabic, result);
+
+    validation_array = convert_arabic(result);
+
+    validation = compute_arabic(validation_array);
+
+    free(validation_array);
+
+    if(validation == arabic){
+        uppercase(result);
+        return result;
+    }
+    else {
+        free(result);
+        return ptr_error;
+    }
+}
