@@ -1,0 +1,120 @@
+\hypertarget{module_8h}{}\section{/home/hugo/Área de Trabalho/\+Trabalho 2 -\/ Linux/include/module.h File Reference}
+\label{module_8h}\index{/home/hugo/Área de Trabalho/\+Trabalho 2 -\/ Linux/include/module.\+h@{/home/hugo/Área de Trabalho/\+Trabalho 2 -\/ Linux/include/module.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{module_8h_a57f7942677a8cfc5b6d436e0aef64b6a}{input\+\_\+error}~-\/1
+\item 
+\#define \hyperlink{module_8h_a90335bacb3ce507165befc164a091b4c}{ptr\+\_\+error}~N\+U\+LL
+\item 
+\#define \hyperlink{module_8h_a213784885a82dd072b52e6660dd65b4c}{max\+\_\+number}~3999
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{module_8h_a05a8fb8c6ae69e278f7ee06911ae5308}{lowercase} (char $\ast$)
+\item 
+void \hyperlink{module_8h_a91acc8458b8b669bb020cf18084162cd}{uppercase} (char $\ast$)
+\item 
+int $\ast$ \hyperlink{module_8h_ae3009d076efc8843513e814ef4be61ff}{convert\+\_\+arabic} (char $\ast$)
+\item 
+int \hyperlink{module_8h_a4989ebff09d61a39a179fcdb219bbf60}{compute\+\_\+arabic} (int $\ast$)
+\item 
+void \hyperlink{module_8h_ae2cf547bd4a8f67fda47342e9eda87e3}{convert\+\_\+roman} (int, char $\ast$)
+\item 
+int \hyperlink{module_8h_a42f879619a43cb5163e586094248fba1}{roman\+\_\+to\+\_\+arabic} (char $\ast$)
+\item 
+char $\ast$ \hyperlink{module_8h_a444efb27a2c063d7c6d6f40995d37197}{arabic\+\_\+to\+\_\+roman} (int)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{module_8h_a57f7942677a8cfc5b6d436e0aef64b6a}\label{module_8h_a57f7942677a8cfc5b6d436e0aef64b6a}} 
+\index{module.\+h@{module.\+h}!input\+\_\+error@{input\+\_\+error}}
+\index{input\+\_\+error@{input\+\_\+error}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{input\+\_\+error}{input\_error}}
+{\footnotesize\ttfamily \#define input\+\_\+error~-\/1}
+
+\mbox{\Hypertarget{module_8h_a213784885a82dd072b52e6660dd65b4c}\label{module_8h_a213784885a82dd072b52e6660dd65b4c}} 
+\index{module.\+h@{module.\+h}!max\+\_\+number@{max\+\_\+number}}
+\index{max\+\_\+number@{max\+\_\+number}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{max\+\_\+number}{max\_number}}
+{\footnotesize\ttfamily \#define max\+\_\+number~3999}
+
+\mbox{\Hypertarget{module_8h_a90335bacb3ce507165befc164a091b4c}\label{module_8h_a90335bacb3ce507165befc164a091b4c}} 
+\index{module.\+h@{module.\+h}!ptr\+\_\+error@{ptr\+\_\+error}}
+\index{ptr\+\_\+error@{ptr\+\_\+error}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{ptr\+\_\+error}{ptr\_error}}
+{\footnotesize\ttfamily \#define ptr\+\_\+error~N\+U\+LL}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{module_8h_a444efb27a2c063d7c6d6f40995d37197}\label{module_8h_a444efb27a2c063d7c6d6f40995d37197}} 
+\index{module.\+h@{module.\+h}!arabic\+\_\+to\+\_\+roman@{arabic\+\_\+to\+\_\+roman}}
+\index{arabic\+\_\+to\+\_\+roman@{arabic\+\_\+to\+\_\+roman}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{arabic\+\_\+to\+\_\+roman()}{arabic\_to\_roman()}}
+{\footnotesize\ttfamily char$\ast$ arabic\+\_\+to\+\_\+roman (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+char$\ast$ \hyperlink{module_8h_a444efb27a2c063d7c6d6f40995d37197}{arabic\+\_\+to\+\_\+roman(int)}; ~\newline
+ This function combines all the previous functions to correctly make the convertion from arabic numbers to roman numbers, preventing all mistakes related to wrong inputs. ~\newline
+ It receives a integer holding the arabic number to be converted. ~\newline
+ The function returns N\+U\+LL (ptr\+\_\+error) if the input arabic number is invalid. ~\newline
+ Otherwise, it returns the string (char$\ast$) with the roman number equivalent to the input. \mbox{\Hypertarget{module_8h_a4989ebff09d61a39a179fcdb219bbf60}\label{module_8h_a4989ebff09d61a39a179fcdb219bbf60}} 
+\index{module.\+h@{module.\+h}!compute\+\_\+arabic@{compute\+\_\+arabic}}
+\index{compute\+\_\+arabic@{compute\+\_\+arabic}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{compute\+\_\+arabic()}{compute\_arabic()}}
+{\footnotesize\ttfamily int compute\+\_\+arabic (\begin{DoxyParamCaption}\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+int \hyperlink{module_8h_a4989ebff09d61a39a179fcdb219bbf60}{compute\+\_\+arabic(int $\ast$)}; ~\newline
+ This function receives an array of integers, resulting from the conversion of the symbols in the convert\+\_\+arabic function, ~\newline
+ and calculates and returns an integer holding the resulting arabic number. ~\newline
+ W\+A\+R\+N\+I\+NG\+: this function does not have any protection from wrong inputs, since it was not designed to be a standalone function. \mbox{\Hypertarget{module_8h_ae3009d076efc8843513e814ef4be61ff}\label{module_8h_ae3009d076efc8843513e814ef4be61ff}} 
+\index{module.\+h@{module.\+h}!convert\+\_\+arabic@{convert\+\_\+arabic}}
+\index{convert\+\_\+arabic@{convert\+\_\+arabic}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{convert\+\_\+arabic()}{convert\_arabic()}}
+{\footnotesize\ttfamily int$\ast$ convert\+\_\+arabic (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+int$\ast$ \hyperlink{module_8h_ae3009d076efc8843513e814ef4be61ff}{convert\+\_\+arabic(char$\ast$)}; ~\newline
+ This function receives a string and returns an array of integers, corresponding to the direct conversion of the symbols of the roman number. ~\newline
+ If in the parameter string exists an unknown symbol, the function returns N\+U\+LL (ptr\+\_\+error). ~\newline
+ W\+A\+R\+N\+I\+NG\+: this function is protected only against inputs with unknown symbols, since it was not designed to be a standalone function. Wrong combinations of regular symbols will be converted. ~\newline
+ W\+A\+R\+N\+I\+NG\+: The user of this function must deallocate the memory under the returned pointer. \mbox{\Hypertarget{module_8h_ae2cf547bd4a8f67fda47342e9eda87e3}\label{module_8h_ae2cf547bd4a8f67fda47342e9eda87e3}} 
+\index{module.\+h@{module.\+h}!convert\+\_\+roman@{convert\+\_\+roman}}
+\index{convert\+\_\+roman@{convert\+\_\+roman}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{convert\+\_\+roman()}{convert\_roman()}}
+{\footnotesize\ttfamily void convert\+\_\+roman (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+int \hyperlink{module_8h_ae2cf547bd4a8f67fda47342e9eda87e3}{convert\+\_\+roman(int, char $\ast$)}; ~\newline
+ This function receives a integer, representing the arabic number to be converted, and a string, to be manipulated by reference. ~\newline
+ W\+A\+R\+N\+I\+NG\+: this function does not have any protection from wrong inputs, since it was not designed to be a standalone function. \mbox{\Hypertarget{module_8h_a05a8fb8c6ae69e278f7ee06911ae5308}\label{module_8h_a05a8fb8c6ae69e278f7ee06911ae5308}} 
+\index{module.\+h@{module.\+h}!lowercase@{lowercase}}
+\index{lowercase@{lowercase}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{lowercase()}{lowercase()}}
+{\footnotesize\ttfamily void lowercase (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+void lowercase (char $\ast$); ~\newline
+ This function puts all characters of the parameter string in lowercase. ~\newline
+ It\textquotesingle{}s return type is void, since it modifies the string by reference. \mbox{\Hypertarget{module_8h_a42f879619a43cb5163e586094248fba1}\label{module_8h_a42f879619a43cb5163e586094248fba1}} 
+\index{module.\+h@{module.\+h}!roman\+\_\+to\+\_\+arabic@{roman\+\_\+to\+\_\+arabic}}
+\index{roman\+\_\+to\+\_\+arabic@{roman\+\_\+to\+\_\+arabic}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{roman\+\_\+to\+\_\+arabic()}{roman\_to\_arabic()}}
+{\footnotesize\ttfamily int roman\+\_\+to\+\_\+arabic (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+int \hyperlink{module_8h_a42f879619a43cb5163e586094248fba1}{roman\+\_\+to\+\_\+arabic(char $\ast$)}; ~\newline
+ This function combines all the previous functions to correctly make the convertion from roman numbers to arabic numbers, preventing all mistakes related to wrong inputs. ~\newline
+ It receives a string holding the roman number to be converted. ~\newline
+ The function returns -\/1 (input\+\_\+error) if the input roman number is invalid. ~\newline
+ Otherwise, it returns the number (int) equivalent to the input. \mbox{\Hypertarget{module_8h_a91acc8458b8b669bb020cf18084162cd}\label{module_8h_a91acc8458b8b669bb020cf18084162cd}} 
+\index{module.\+h@{module.\+h}!uppercase@{uppercase}}
+\index{uppercase@{uppercase}!module.\+h@{module.\+h}}
+\subsubsection{\texorpdfstring{uppercase()}{uppercase()}}
+{\footnotesize\ttfamily void uppercase (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+void uppercase (char $\ast$); ~\newline
+ This function puts all characters of the parameter string in uppercase. ~\newline
+ It\textquotesingle{}s return type is void, since it modifies the string by reference. 

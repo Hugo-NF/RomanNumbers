@@ -1,0 +1,109 @@
+\hypertarget{test__roman__numbers_8c}{}\section{/home/hugo/Área de Trabalho/\+Trabalho 2 -\/ Linux/src/test\+\_\+roman\+\_\+numbers.c File Reference}
+\label{test__roman__numbers_8c}\index{/home/hugo/Área de Trabalho/\+Trabalho 2 -\/ Linux/src/test\+\_\+roman\+\_\+numbers.\+c@{/home/hugo/Área de Trabalho/\+Trabalho 2 -\/ Linux/src/test\+\_\+roman\+\_\+numbers.\+c}}
+{\ttfamily \#include \char`\"{}module.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{test__roman__numbers_8c_aff9816e1e033470cdc88e9bc2e2608dc}{T\+E\+ST} (lowercase\+\_\+function, comparing\+\_\+\+IO)
+\item 
+\hyperlink{test__roman__numbers_8c_a06168306e9d32cfe01ffb863a2ca5346}{T\+E\+ST} (uppercase\+\_\+function, comparing\+\_\+\+IO)
+\item 
+\hyperlink{test__roman__numbers_8c_a02346570f3e266f99fdb6b59061333d3}{T\+E\+ST} (convert\+\_\+arabic\+\_\+function, all\+\_\+cases)
+\item 
+\hyperlink{test__roman__numbers_8c_a5b7d298a587d65755d87b964c47926c7}{T\+E\+ST} (compute\+\_\+arabic\+\_\+function, all\+\_\+cases)
+\item 
+\hyperlink{test__roman__numbers_8c_ae5b48b18885cffeb76c91afccd3a9d73}{T\+E\+ST} (\hyperlink{module_8h_ae2cf547bd4a8f67fda47342e9eda87e3}{convert\+\_\+roman}, all\+\_\+cases)
+\item 
+\hyperlink{test__roman__numbers_8c_a552b4783bf65df2fae4e0bafe6025851}{T\+E\+ST} (\hyperlink{module_8h_a42f879619a43cb5163e586094248fba1}{roman\+\_\+to\+\_\+arabic}, all\+\_\+cases)
+\item 
+\hyperlink{test__roman__numbers_8c_a0fc301c6c81f88fc0ee00ad22c8713a9}{T\+E\+ST} (\hyperlink{module_8h_a444efb27a2c063d7c6d6f40995d37197}{arabic\+\_\+to\+\_\+roman}, all\+\_\+cases)
+\item 
+int \hyperlink{test__roman__numbers_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{test__roman__numbers_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{test__roman__numbers_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}!main@{main}}
+\index{main@{main}!test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+This file intends only to test the functions conteined in \hyperlink{module_8c}{module.\+c}/.h files. ~\newline
+ Here we are using the Google\+Test test framework. \mbox{\Hypertarget{test__roman__numbers_8c_aff9816e1e033470cdc88e9bc2e2608dc}\label{test__roman__numbers_8c_aff9816e1e033470cdc88e9bc2e2608dc}} 
+\index{test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{lowercase\+\_\+function}]{,  }\item[{comparing\+\_\+\+IO}]{ }\end{DoxyParamCaption})}
+
+Test 1 -\/ lowercase ~\newline
+ This test compares the resulting string with the input string in lowercase characters ~\newline
+ There are 3 possible inputs\+: ~\newline
+ 1. String with all character in uppercase ~\newline
+ 2. String with mixed uppercase and lowercase characters ~\newline
+ 3. String is already in lowercase ~\newline
+ Passing this test means that the function successfully converts or keeps a string in lowercase \mbox{\Hypertarget{test__roman__numbers_8c_a06168306e9d32cfe01ffb863a2ca5346}\label{test__roman__numbers_8c_a06168306e9d32cfe01ffb863a2ca5346}} 
+\index{test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{uppercase\+\_\+function}]{,  }\item[{comparing\+\_\+\+IO}]{ }\end{DoxyParamCaption})}
+
+Test 2 -\/ uppercase ~\newline
+ This test compares the resulting string with the input string in uppercase characters ~\newline
+ There are 3 possible inputs\+: ~\newline
+ 1. String with all character in lowercase ~\newline
+ 2. String with mixed uppercase and lowercase characters ~\newline
+ 3. String is already in uppercase ~\newline
+ Passing this test means that the function successfully converts or keeps a string in uppercase \mbox{\Hypertarget{test__roman__numbers_8c_a02346570f3e266f99fdb6b59061333d3}\label{test__roman__numbers_8c_a02346570f3e266f99fdb6b59061333d3}} 
+\index{test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{convert\+\_\+arabic\+\_\+function}]{,  }\item[{all\+\_\+cases}]{ }\end{DoxyParamCaption})}
+
+Test 3 -\/ convert\+\_\+arabic ~\newline
+ This function intends to generate an array with the arabic numbers corresponding to the roman symbols given in a string ~\newline
+ W\+A\+R\+N\+I\+NG\+: this function is protected only against inputs with unknown symbols, since it was not designed to be a standalone function. Wrong combinations of regular symbols will be converted. ~\newline
+ The first test situation analises the behavior if the function receives a string with incoherent symbols ~\newline
+ All other tests analises the array generated given a regular input. ~\newline
+ Passing this test means that the function successfully converts the symbols from the string to a array of integers. \mbox{\Hypertarget{test__roman__numbers_8c_a5b7d298a587d65755d87b964c47926c7}\label{test__roman__numbers_8c_a5b7d298a587d65755d87b964c47926c7}} 
+\index{test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{compute\+\_\+arabic\+\_\+function}]{,  }\item[{all\+\_\+cases}]{ }\end{DoxyParamCaption})}
+
+Test 4 -\/ compute\+\_\+arabic ~\newline
+ This function intends to give the resulting arabic number after receiving the array generated by convert\+\_\+arabic function ~\newline
+ W\+A\+R\+N\+I\+NG\+: this function does not have any protection from wrong inputs, since it was not designed to be a standalone function. ~\newline
+ All tests analises the number generated given a regular input ~\newline
+ Passing this test means that the function successfully calculates the arabic number given the array of integers generated by convert\+\_\+arabic. \mbox{\Hypertarget{test__roman__numbers_8c_ae5b48b18885cffeb76c91afccd3a9d73}\label{test__roman__numbers_8c_ae5b48b18885cffeb76c91afccd3a9d73}} 
+\index{test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{\hyperlink{module_8h_ae2cf547bd4a8f67fda47342e9eda87e3}{convert\+\_\+roman}}]{,  }\item[{all\+\_\+cases}]{ }\end{DoxyParamCaption})}
+
+Test 5 -\/ convert\+\_\+roman ~\newline
+ This function intends to convert an integer (arabic number) in a string with the correspondent roman number ~\newline
+ W\+A\+R\+N\+I\+NG\+: this function does not have any protection from wrong inputs, since it was not designed to be a standalone function. ~\newline
+ All tests analises the string generated given a regular input ~\newline
+ Passing this test means that the function successfully alterates, by reference, the parameter string. \mbox{\Hypertarget{test__roman__numbers_8c_a552b4783bf65df2fae4e0bafe6025851}\label{test__roman__numbers_8c_a552b4783bf65df2fae4e0bafe6025851}} 
+\index{test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{\hyperlink{module_8h_a42f879619a43cb5163e586094248fba1}{roman\+\_\+to\+\_\+arabic}}]{,  }\item[{all\+\_\+cases}]{ }\end{DoxyParamCaption})}
+
+Test 6 -\/ roman\+\_\+to\+\_\+arabic ~\newline
+ This function combines all the previous functions to correctly make the convertion from roman numbers to arabic numbers, preventing all mistakes related to wrong inputs. ~\newline
+ The first test situation analises the behavior if the function receives a N\+U\+LL char pointers or wrong combinations of symbols. ~\newline
+ All other tests analises the integer generated given a regular input ~\newline
+ Passing this test means that the function successfully converts the number. \mbox{\Hypertarget{test__roman__numbers_8c_a0fc301c6c81f88fc0ee00ad22c8713a9}\label{test__roman__numbers_8c_a0fc301c6c81f88fc0ee00ad22c8713a9}} 
+\index{test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test\+\_\+roman\+\_\+numbers.\+c@{test\+\_\+roman\+\_\+numbers.\+c}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{\hyperlink{module_8h_a444efb27a2c063d7c6d6f40995d37197}{arabic\+\_\+to\+\_\+roman}}]{,  }\item[{all\+\_\+cases}]{ }\end{DoxyParamCaption})}
+
+Test 7 -\/ roman\+\_\+to\+\_\+arabic ~\newline
+ This function combines all the previous functions to correctly make the convertion from arabic numbers to roman numbers, preventing all mistakes related to wrong inputs. ~\newline
+ The first test situation analises the behavior if the function receives a negative number. ~\newline
+ All other tests analises the string generated given a regular input ~\newline
+ Passing this test means that the function successfully converts the number. 
